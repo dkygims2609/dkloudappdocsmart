@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dkloud - Sign Up</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        body { font-family: 'Poppins', sans-serif; background-color: #121212; color: #FFFFFF; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .signup-container { background-color: #1E1E1E; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); width: 100%; max-width: 400px; text-align: center; border-top: 4px solid #8A2BE2; }
+        .logo-container img { width: 100px; height: auto; margin-bottom: 20px; }
+        .signup-container h1 { font-size: 24px; margin-bottom: 30px; }
+        .input-group { margin-bottom: 20px; text-align: left; }
+        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #BBBBBB; }
+        .input-group input { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #444; background-color: #2C2C2C; color: #FFFFFF; font-size: 16px; }
+        .signup-button { width: 100%; padding: 15px; border: none; border-radius: 8px; background-color: #4169E1; color: #FFFFFF; font-size: 18px; font-weight: 600; cursor: pointer; transition: background-color 0.3s; }
+        .signup-button:hover { background-color: #5577E5; }
+        .login-link { margin-top: 25px; font-size: 14px; }
+        .login-link a { color: #8A2BE2; text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="logo-container">
+            <img src="dkloudlogo.png" alt="dkloud Logo">
+        </div>
+        <h1>Create your dkloud Account</h1>
+        <form>
+            <div class="input-group"><label for="email">Email Address</label><input type="email" id="email" name="email" required></div>
+            <div class="input-group"><label for="password">Create Password</label><input type="password" id="password" name="password" required></div>
+            <div class="input-group"><label for="confirm-password">Confirm Password</label><input type="password" id="confirm-password" name="confirm-password" required></div>
+            <button type="submit" class="signup-button">Create Account</button>
+        </form>
+        <div class="login-link"><p>Already have an account? <a href="index.html">Log In</a></p></div>
+    </div>
+</body>
+</html>
