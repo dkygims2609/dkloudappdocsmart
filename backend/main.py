@@ -25,7 +25,8 @@ class UserInDB(BaseModel):
 def read_root():
     return {"message": "Welcome to the dkloud Backend API"}
 
-@app.post("/api/register", status_code=status.HTTP_201_CREATED)
+# THIS IS THE CORRECTED LINE. The path is now "/register" instead of "/api/register"
+@app.post("/register", status_code=status.HTTP_201_CREATED)
 async def register_user(user: UserCreate):
     if user.email in fake_users_db:
         raise HTTPException(status_code=400, detail="Email already registered")
