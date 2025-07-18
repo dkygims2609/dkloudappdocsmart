@@ -1,9 +1,24 @@
 from fastapi import FastAPI, HTTPException, status
 from pydantic import BaseModel, EmailStr
-from mangum import Mangum  # Import the Mangum adapter
+from mangum import Mangum
+from fastapi.middleware.cors import CORSMiddleware # Import the CORS middleware
 
 # --- App Initialization ---
 app = FastAPI()
+
+# --- CORS Middleware Setup ---
+# This is the new section that adds the "permission" headers.
+origins = [
+    "*"  # For development, we allow all origins. In production, we'd restrict this.
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # --- Dummy Database ---
 fake_users_db = {}
