@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dkloud - Dashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+        body { font-family: 'Poppins', sans-serif; background-color: #121212; color: #FFFFFF; margin: 0; }
+        .header { background-color: #1E1E1E; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; }
+        .header .logo img { height: 40px; }
+        .header .user-profile { display: flex; align-items: center; font-weight: 500; }
+        .header .user-profile .logout-btn { background: none; border: none; color: #BBBBBB; cursor: pointer; font-size: 16px; margin-left: 20px; }
+        .header .user-profile .logout-btn:hover { color: #FFFFFF; }
+        .main-content { padding: 30px; }
+        .dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .dashboard-header h1 { font-size: 28px; margin: 0; }
+        .upload-btn { padding: 12px 25px; border: none; border-radius: 8px; background-color: #4169E1; color: #FFFFFF; font-size: 16px; font-weight: 600; cursor: pointer; transition: background-color 0.3s; }
+        .upload-btn:hover { background-color: #5577E5; }
+        .search-filter-bar { margin-bottom: 30px; }
+        .search-filter-bar input { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #444; background-color: #2C2C2C; color: #FFFFFF; font-size: 16px; }
+        .document-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        .document-card { background-color: #1E1E1E; border-radius: 12px; overflow: hidden; border: 1px solid #333; transition: transform 0.2s, box-shadow 0.2s; }
+        .document-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.4); border-color: #8A2BE2; }
+        .document-card .thumbnail { background-color: #2C2C2C; height: 150px; display: flex; justify-content: center; align-items: center; font-size: 14px; color: #888; }
+        .document-card .info { padding: 15px; }
+        .document-card .info h3 { margin: 0 0 5px 0; font-size: 18px; }
+        .document-card .info p { margin: 0; font-size: 14px; color: #BBBBBB; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"><img src="https://i.imgur.com/uN153o7.png" alt="dkloud Logo"></div>
+        <div class="user-profile"><span>Welcome, User</span><button class="logout-btn">Logout</button></div>
+    </header>
+    <main class="main-content">
+        <div class="dashboard-header"><h1>My Documents</h1><button class="upload-btn">Upload New Document</button></div>
+        <div class="search-filter-bar"><input type="text" placeholder="Search your documents by name or content..."></div>
+        <div class="document-grid">
+            <div class="document-card"><div class="thumbnail">Document Preview</div><div class="info"><h3>PAN Card</h3><p>Uploaded: Jul 19, 2025</p></div></div>
+            <div class="document-card"><div class="thumbnail">Document Preview</div><div class="info"><h3>Aadhaar Card</h3><p>Uploaded: Jul 18, 2025</p></div></div>
+            <div class="document-card"><div class="thumbnail">Document Preview</div><div class="info"><h3>Passport</h3><p>Uploaded: Jul 15, 2025</p></div></div>
+            <div class="document-card"><div class="thumbnail">Document Preview</div><div class="info"><h3>Rental Agreement.pdf</h3><p>Uploaded: Jul 12, 2025</p></div></div>
+        </div>
+    </main>
+</body>
+</html>
