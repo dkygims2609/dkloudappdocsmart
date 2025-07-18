@@ -1,0 +1,11 @@
+[build]
+  # This tells Netlify where our static frontend files are.
+  publish = "frontend/"
+  # This tells Netlify where our serverless Python backend function is.
+  functions = "backend/"
+
+# This rule makes sure that any request to "/api/..." goes to our Python backend.
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/main/:splat"
+  status = 200
