@@ -25,7 +25,7 @@
             <img src="dkloudlogo.png" alt="dkloud Logo">
         </div>
         <h1>Create your dkloud Account</h1>
-        <form>
+        <form id="signup-form">
             <div class="input-group"><label for="email">Email Address</label><input type="email" id="email" name="email" required></div>
             <div class="input-group"><label for="password">Create Password</label><input type="password" id="password" name="password" required></div>
             <div class="input-group"><label for="confirm-password">Confirm Password</label><input type="password" id="confirm-password" name="confirm-password" required></div>
@@ -33,5 +33,57 @@
         </form>
         <div class="login-link"><p>Already have an account? <a href="index.html">Log In</a></p></div>
     </div>
-</body>
+
+    <script>
+        // Find the form in the HTML
+        const signupForm = document.getElementById('signup-form');
+
+        // Listen for when the user clicks the "Create Account" button
+        signupForm.addEventListener('submit', async function(event) {
+            // Prevent the page from reloading
+            event.preventDefault();
+
+            // Get the user's input from the form fields
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            
+            // Basic check to see if passwords match
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            // Send the data to our backend API
+            try {
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        password: password
+                    }),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    // If successful, show a success message
+                    alert('Account created successfully! You can now log in.');
+                    // Redirect to the login page
+                    window.location.href = 'index.html';
+                } else {
+                    // If there was an error, show the error message from the server
+                    alert('Error: ' + result.detail);
+                }
+            } catch (error) {
+                // Handle network errors
+                console.error('Failed to connect to the API:', error);
+                alert('Could not connect to the server. Please try again later.');
+            }
+        });
+    </script>
+    </body>
 </html>
